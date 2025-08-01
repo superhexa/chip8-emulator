@@ -17,14 +17,6 @@ CHIP-8 is a simple interpreted programming language developed in the 1970s for 8
 
 Many retro games were developed for CHIP-8, including Pong, Space Invaders, and Tetris clones. Because of its simplicity, it’s a popular target for emulator development.
 
-## Features
-
-- Full CHIP-8 instruction set support
-- High compatibility with CHIP-8 games
-- SDL2-based graphics and input
-- Keyboard mapping for all 16 keys
-- Adjustable execution timing
-
 ## Requirements
 
 - C compiler (GCC or Clang)
