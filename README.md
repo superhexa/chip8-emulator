@@ -1,8 +1,7 @@
 # CHIP-8 Emulator
+A fast and accurate CHIP-8 emulator written in C using SDL2.
 
 <img width="640" height="320" alt="2025-08-02-005112_hyprshot" src="https://github.com/user-attachments/assets/507c2ca4-2507-4b0f-be73-944e0069b256" />
-
-A fast and accurate CHIP-8 emulator written in C using SDL2.
 
 ## What is CHIP-8?
 
