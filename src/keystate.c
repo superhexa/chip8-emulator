@@ -1,15 +1,20 @@
-#include "keystate.h"
 #include <SDL2/SDL.h>
 #include <stdlib.h>
+#include "keystate.h"
+#include "framebuffer.h"
+#include "context.h"
 
-void update_keys(Context* ctx) {
+void process_input(Context* ctx) {
     SDL_Event e;
     while (SDL_PollEvent(&e)) {
         if (e.type == SDL_QUIT) exit(0);
+        if (e.type == SDL_KEYDOWN) {
+            if (e.key.keysym.sym == SDLK_EQUALS || e.key.keysym.sym == SDLK_KP_PLUS) resize_fb(1);
+            if (e.key.keysym.sym == SDLK_MINUS || e.key.keysym.sym == SDLK_KP_MINUS) resize_fb(-1);
+        }
         if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP) {
             int v = (e.type == SDL_KEYDOWN) ? 1 : 0;
             SDL_Keycode k = e.key.keysym.sym;
-
             if (k == SDLK_1 || k == SDLK_KP_1) ctx->keys[0x1] = v;
             else if (k == SDLK_2 || k == SDLK_KP_2) ctx->keys[0x2] = v;
             else if (k == SDLK_3 || k == SDLK_KP_3) ctx->keys[0x3] = v;

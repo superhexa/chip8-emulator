@@ -4,21 +4,20 @@
 #include "framebuffer.h"
 #include "keystate.h"
 #include "timerunit.h"
+#include "defs.h"
 
-int main(int argc, char** argv) {
-    if (argc != 2) return 1;
-
+int main(int c,char** v){
     Context ctx;
     init_ctx(&ctx);
-    load_rom(&ctx, argv[1]);
+    load_rom(&ctx,v[1]);
     init_fb();
 
-    while (!ctx.halt) {
-        update_keys(&ctx);       
-        if (!ctx.wait) step(&ctx); 
-        tick(&ctx);              
-        draw_fb(&ctx);           
-        usleep(1000 * CYCLE_DELAY); 
+    while (1) {
+        process_input(&ctx);
+        for (int i = 0; i < CYCLE_PER_FRAME; i++) step(&ctx);
+        tick(&ctx);
+        draw_fb(&ctx);
+        usleep(1000);
     }
 
     quit_fb();

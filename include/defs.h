@@ -8,5 +8,5 @@
 #define GFX_HEIGHT 32
 #define FONT_START 0x050
 #define ROM_START 0x200
-#define CYCLE_DELAY 2
+#define CYCLE_PER_FRAME 7 
 #endif

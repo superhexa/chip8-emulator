@@ -23,7 +23,7 @@ $(BIN): $(OBJS)
 	$(CC) $(OBJS) -o $@ $(LDFLAGS)
 
 run: all
-	./$(BIN) assets/roms/pong.ch8
+	./$(BIN) roms/pong.ch8
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN)

@@ -3,5 +3,5 @@
 #include <SDL2/SDL.h>
 #include "context.h"
 
-void update_keys(Context* ctx);
+void process_input(Context* ctx);
 #endif
